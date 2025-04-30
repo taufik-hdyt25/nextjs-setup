@@ -7,7 +7,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        blueCustom: "#1E3A8A",
+        primary: '#3b82f6',
       },
     },
   },
