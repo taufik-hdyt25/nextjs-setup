@@ -29,7 +29,6 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${geistMono.variable} antialiased`}
       >
-        <p>okelah</p>
         {children}
       </body>
     </html>
