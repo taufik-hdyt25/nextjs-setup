@@ -20,6 +20,7 @@ interface IInputFormProps<T extends FieldValues> {
   description?: string | ReactNode;
   leftIcon?:ReactNode
   rightIcon?: ReactNode
+  inputClassName?: string
 }
 
 const InputForm = <T extends FieldValues>({
@@ -29,7 +30,8 @@ const InputForm = <T extends FieldValues>({
   label,
   description,
   leftIcon,
-  rightIcon
+  rightIcon,
+  inputClassName
 }: IInputFormProps<T>) => {
   return (
     <FormField
@@ -40,7 +42,7 @@ const InputForm = <T extends FieldValues>({
           {label && <FormLabel className="mb-1">{label}</FormLabel>}
           <FormControl>
             <Input
-              className="focus-visible:outline focus-visible:ring-1 focus-visible:ring-offset-0 focus-visible:shadow-none"
+              className={cn("focus-visible:outline focus-visible:ring-1 focus-visible:ring-offset-0 focus-visible:shadow-none",inputClassName)}
               leftIcon={leftIcon}
               rightIcon={rightIcon}
               {...field}

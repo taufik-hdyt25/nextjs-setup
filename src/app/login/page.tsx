@@ -1,5 +1,6 @@
 "use client";
 
+import { logo } from "@/assets";
 import InputForm from "@/components/templates/InputForm";
 import SelectForm from "@/components/templates/SelectForm ";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ import {
   LucideMail,
   LucideVoicemail,
 } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -34,7 +36,14 @@ const LoginPage = () => {
   };
   return (
     <div className="flex justify-center items-center h-screen w-screen">
-      <div className="w-[400px] p-5 border border-primary h-fit rounded-md shadow-lg">
+      <div className="w-[400px] p-5 border border-primary h-fit rounded-md shadow-lg bg-[#1A1919]">
+        <Image
+          width={150}
+          height={100}
+          src={logo}
+          alt="logo"
+          className="flex justify-self-center my-5"
+        />
         <Form {...form}>
           <div className="flex flex-col gap-2">
             <InputForm
@@ -42,6 +51,7 @@ const LoginPage = () => {
               control={form.control}
               name="email"
               leftIcon={<LucideMail size={16} className="text-gray-400" />}
+              inputClassName="text-white"
             />
             <InputForm
               label="Password"
@@ -52,13 +62,7 @@ const LoginPage = () => {
                 <LucideEye size={16} className="text-primary cursor-pointer" />
               }
               inputProps={{ type: "password" }}
-            />
-
-            <SelectForm
-              label="Select"
-              control={form.control}
-              name="password"
-              options={[{ label: "oke", value: "oke" }]}
+              inputClassName="text-white"
             />
           </div>
 

@@ -25,7 +25,7 @@ interface IInputFormProps<T extends FieldValues> {
   inputProps?: React.ComponentProps<typeof Input>;
   label?: string | ReactNode;
   description?: string | ReactNode;
-  options: { label: string; value: string }[]
+  options?: { label: string; value: string }[] | []
   placeholder?:ReactNode
 }
 
@@ -51,7 +51,7 @@ const SelectForm = <T extends FieldValues>({
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
               <SelectContent>
-                {options.map((val) => (
+                { options && options.map((val) => (
                   <SelectItem key={val.value} value={val.value}>
                     {val.label}
                   </SelectItem>
